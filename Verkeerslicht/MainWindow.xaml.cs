@@ -24,5 +24,37 @@ namespace Verkeerslicht
         {
             InitializeComponent();
         }
+
+        private void Stop_Click(object sender, RoutedEventArgs e)
+        {
+            verkeerslichtrood.Opacity = 1;
+            verkeerslichtoranje.Opacity = 0;
+            ButtonOranje.IsEnabled = true;
+            ButtonRood.IsEnabled = false;
+        }
+
+        private void Opgelet_Click(object sender, RoutedEventArgs e)
+        {
+            if (verkeerslichtgroen.Opacity == 1)
+            {
+                ButtonRood.IsEnabled = true;
+                verkeerslichtgroen.Opacity = 0;
+            }
+            else
+            {
+                ButtonGroen.IsEnabled = true;
+                verkeerslichtrood.Opacity = 0;
+            }
+            verkeerslichtoranje.Opacity = 1;
+            ButtonOranje.IsEnabled = false;
+        }
+
+        private void Go_Click(object sender, RoutedEventArgs e)
+        {
+            verkeerslichtgroen.Opacity = 1;
+            verkeerslichtoranje.Opacity = 0; 
+            ButtonGroen.IsEnabled = false;
+            ButtonOranje.IsEnabled = true;
+        }
     }
 }
